@@ -1,0 +1,16 @@
+[
+   {
+      "string": "nonolive",
+      "integer": 1,
+      "float": 4.5,
+      "date": "2018-09-25",
+      "boolean": true
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": true
+   }
+]

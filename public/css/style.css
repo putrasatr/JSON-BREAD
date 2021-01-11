@@ -1,0 +1,241 @@
+.container {
+    margin:  0px 200px;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: whitesmoke;
+    border: 0px 4px solid;
+}
+.judul {
+    color: rgb(24, 6, 6);
+    padding: 5px 0px 0px 10px;
+}
+
+.rowinput {
+    margin-right: 20px;
+    padding: 10px;
+    padding-right: 550px;
+    float: right;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2.5px solid  #68686b;
+    border-right: 2.5px solid  #68686b;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.rowdate {
+    margin-right: 620px;
+    padding: 6px;
+    padding-right: 40px;
+    float: right;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2.5px solid  #68686b;
+    border-right: 2.5px solid  #68686b;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.rowdate1 {
+    margin-left: 125px;
+    padding: 6px;
+    padding-right: 40px;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2.5px solid  #68686b;
+    border-right: 2.5px solid  #68686b;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+.rowdate2 {
+    margin-left: 130px;
+    padding: 5px;
+    font-size: 15spx;
+}
+
+.rowboolean {
+    margin-right: 20px;
+    padding: 5px;
+    padding-right: 630px;
+    float: right;
+    font-size: 14px;
+    border: none;
+    border-bottom: 2.5px solid  #68686b;
+    border-right: 2.5px solid  #68686b;
+    border-radius: 4px;
+    cursor: pointer;
+    background-color: #ffffff;
+}
+.rowinput-on-edit{
+    margin-right: 20px;
+    margin-top: 0%;
+    padding: 10px;
+    padding-right: 770px;
+    float: right;
+    font-size: 15px;
+    border: none;
+    border-bottom: 2.5px solid  #68686b;
+    border-right: 2.5px solid  #68686b;
+    border-radius: 4px;
+    background-color: #ababb1
+}
+.check {
+    padding: 0px 0px 50px 20px;
+}
+
+.checkbox {
+    cursor: pointer;
+    border: 4px solid red;
+}
+
+.tapcari {
+    color: rgb(24, 6, 6);
+    background-color: white;
+    border: 0px 2px 2px 0px solid rgb(24, 6, 6);
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition-delay:  3ms ;
+}
+
+.tapcari:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+
+.column {
+    width: 100%;
+    font-size: large;
+    font: 1em sans-serif;
+    border-collapse: collapse;
+    background-color: black;
+    color: whitesmoke;
+    text-align: left;
+    font-variant-position: 40px;
+}
+
+.column th,
+.column td {
+    padding: 8px 12px;
+}
+
+.butt {
+    border-radius: 6px;
+    font-size: medium;
+    background-color: white;
+    color:rgb(24, 6, 6);
+    border: 0px 2px 2px 0px solid rgb(24, 6, 6);
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.butt:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+
+.buttdel {
+    border-radius: 6px;
+    border: 0px 2px 2px 0px solid red;
+    font-size: medium;
+    background-color: white;
+    color: red;
+    padding: 10px 24px;
+    cursor: pointer;
+}
+
+.buttdel:hover {
+    background-color: red;
+    color: white;
+}
+
+.addbut {
+    color:rgb(24, 6, 6);
+    background-color: white;
+    border: 0px 2px 2px 0px solid rgb(24, 6, 6);
+    font-size: 120%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addbut:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+
+.addbutt {
+    color:rgb(24, 6, 6);
+    background-color: white;
+    border: 2px solid rgb(24, 6, 6);
+    font-size: 120%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.addbutt:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+
+.updatebut {
+    color:rgb(24, 6, 6);
+    background-color: white;
+    border: 0px 2px 2px 0px solid#68686b;
+    font-size: 120%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    margin: 30px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.updatebut:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+
+.valfont {
+    font-weight: bolder;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    border-bottom: 1px solid rgb(160, 159, 159);
+}
+
+.backbut {
+    border: 0px 2px 2px 0px solid#68686b;
+    color: rgb(24, 6, 6);
+    background-color: white;
+    font-size: 120%;
+    font-weight: bolder;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.backbut:hover {
+    background-color: rgb(182, 179, 179);
+    color: black;
+}
+.pagination {
+    display: inline-block;
+  }
+  
+  .pagination a {
+    color: black;
+    float: left;
+    padding: 8px 16px;
+    text-decoration: none;
+  }
