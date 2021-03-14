@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JSON-BREAD</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
 </head>
 
 <link rel="stylesheet" href="/css/style.css">
@@ -12,8 +14,8 @@
 
 <body class="body">
     <div class="container">
-        <form action="search" method="POST">
-
+        <form action="/" method="GET">
+<input name="page" value="1" type="hidden"/>
             <div class="judul">
                 <h1>BREAD (Browse, Read, Add, Edit, Delete)</h1>
                 <h2>Filters</h2>
@@ -63,14 +65,16 @@
                     <input class="checkbox" type="checkbox" id="exampleCheck1">Boolean
                 </label>
                 <select class="rowboolean" name="boolean">
-                    <option value="" selected>Choose the boolean ...</option>
+                    <option value="none" selected>Choose the boolean ...</option>
                     <option value="false">False</option>
                     <option value="true">True</option>
                 </select>
             </div>
 
-            <button class="tapcari">Search</button>
-
+            <button class="tapcari" type="submit">Search</button>
+            <a href="/">
+                <button class="tapcari">reset</button>
+            </a>
         </form>
 
         <div>
@@ -88,10 +92,11 @@
                     </tr>
                 </thead>
                 <tbody style="width: 100%; background-color: whitesmoke; color: black; ">
-                    <% data.forEach((item, index)=>{ %>
+                    <% let render = onSearch ? dataFiltered:data %>
+                    <%i.forEach((item, index) =>{ %>
                         <tr class="valfont">
                             <th>
-                                <%= index + 1 %>
+                                <%= item.id %>
                             </th>
 
                             <td class="valfont" style="font-weight: bolder;">
@@ -115,10 +120,10 @@
                             </td>
 
                             <td class="valfont" style="text-align: center;">
-                                <a href="edit/<%= index %>">
+                                <a href="edit/<%= item.id %>">
                                     <button class="butt">Edit</button>
                                 </a>
-                                <a href="delete/<%= index %>">
+                                <a href="delete/<%= item.id %>">
                                     <button class="buttdel">Delete</button>
                                 </a>
                             </td>
@@ -129,6 +134,22 @@
     
         </div>
 
+        <nav aria-label="...">
+            <ul class="pagination">
+              <li class="page-item<%= page == 1 ? ' disabled' : ''; %>">
+                <a class="page-link" href="/?page=<%= parseInt(page) - 1 %>" tabindex="-1">Previous</a>
+              </li>
+              <% for(let i = 1; i <= pages; i++){ %>
+              <li class="page-item<%= i == page ? ' active' : ''; %>">
+                <a class="page-link" href="<%= url.replace(`page=${page}`, `page=${i}`); %>">
+                  <%= i %></a>
+              </li>
+              <% } %>
+              <li class="page-item<%= page == pages ? ' disabled' : ''; %>">
+                <a class="page-link" href="/?page=<%= parseInt(page) + 1 %>">Next</a>
+              </li>
+            </ul>
+          </nav>
         <div>
             <a href="add">
                 <button class="addbut">Add</button>
