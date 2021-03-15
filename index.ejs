@@ -93,7 +93,7 @@
                 </thead>
                 <tbody style="width: 100%; background-color: whitesmoke; color: black; ">
                     <% let render = onSearch ? dataFiltered:data %>
-                    <%i.forEach((item, index) =>{ %>
+                    <%render.forEach((item, index) =>{ %>
                         <tr class="valfont">
                             <th>
                                 <%= item.id %>

@@ -1,33 +1,17 @@
 [
    {
-      "id": 2,
-      "string": "misantrophy",
+      "id": "1",
+      "string": "lenovo",
       "integer": 14324,
-      "float": 4.554,
-      "date": "2018-08-25",
-      "boolean": true
-   },
-   {
-      "id": "3",
-      "string": "lenovo1",
-      "integer": 1,
-      "float": 12,
+      "float": 32,
       "date": "2021-12-31",
       "boolean": false
    },
    {
-      "id": 4,
-      "string": "Asus",
-      "integer": 34,
-      "float": 3,
-      "date": "2021-12-31",
-      "boolean": true
-   },
-   {
-      "id": 5,
-      "string": "Asus",
-      "integer": 2,
-      "float": 23,
+      "id": 2,
+      "string": "lenovo1",
+      "integer": 14324,
+      "float": 84,
       "date": "2021-12-31",
       "boolean": false
    }

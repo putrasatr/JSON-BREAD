@@ -58,13 +58,12 @@ app.get('/', function (req, res, next) {
         }
     })
     const total = data.length;
-    const i = data.splice(offset, limit)
+    // const i = data.splice(offset, limit)
 
     const pages = Math.ceil(total / limit);
 
     res.render('index.ejs', {
         dataFiltered,
-        i,
         data,
         onSearch,
         page,
@@ -80,7 +79,8 @@ app.get('/add', function (req, res, next) {
 });
 
 app.post('/add', function (req, res) {
-    let count = data[data.length - 1].id
+    console.log(data.length)
+    let count = data.length == 0 ? 0 : data[data.length - 1].id
     data.push({
         id: Number(count) + 1,
         string: req.body.string,
