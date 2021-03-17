@@ -136,5 +136,51 @@ app.get('/delete/:id', function (req, res, next) {
     writeData(data);
     res.redirect('/');
 });
+var i = {
+    Try: function (data) {
+
+    }
+}
+app.get('/kaskus/', function (req, res, next) {
+    let obj = { all: [], Kas: [], Kus: [], KasKus: [] }
+    res.render('kaskus.ejs', { obj, all: obj.all, offset: obj.Kus })
+})
+app.get('/api/kaskus/:page/:count', function (req, res, next) {
+    const { count } = req.params
+    let obj = { all: [], Kas: [], Kus: [], KasKus: [] }
+
+    for (let i = 1; i <= Number(count); i++) {
+        let hasil = i * 2
+        if (hasil % 5 === 0 && hasil % 6 === 0) obj.all.push('KASKUS')
+        else if (hasil % 5 === 0) obj.all.push('KUS')
+        else if (hasil % 4 === 0) obj.all.push('KAS')
+        else obj.all.push(i * 2)
+    }
+    obj.all.map(item => item == 'KAS' ? obj.Kas.push(item) : item == 'KUS' ? obj.Kus.push(item) : item == 'KASKUS' ? obj.KasKus.push(item) : '')
+    const page = req.params.page || 1
+    console.log(page)
+    const limit = 5
+    const total = obj.all.length;
+    const url = req.url == '/kaskus/' ? '/kaskus/?page=1' : req.url
+    const offset = (page - 1) * limit;
+    const pages = Math.ceil(total / limit);
+    const lmt = limit * page
+    // res.render('kaskus.ejs', {
+    //     obj,
+    // all: obj.all.splice(offset, limit),
+    // page,
+    // pages,
+    // url,
+    // offset
+    // });
+    res.send({
+        obj,
+        all: obj.all.splice(offset, limit),
+        page,
+        pages,
+        url,
+        offset
+    })
+});
 
 app.listen(port, () => { console.info(`Anda sedang berjalan di port ${port}`) })

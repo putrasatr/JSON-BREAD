@@ -1,18 +1,18 @@
 [
    {
-      "id": "1",
+      "id": 1,
       "string": "lenovo",
-      "integer": 14324,
-      "float": 32,
+      "integer": 123,
+      "float": 321,
       "date": "2021-12-31",
-      "boolean": false
+      "boolean": true
    },
    {
       "id": 2,
-      "string": "lenovo1",
+      "string": "Asus",
       "integer": 14324,
-      "float": 84,
+      "float": 31,
       "date": "2021-12-31",
-      "boolean": false
+      "boolean": true
    }
 ]
