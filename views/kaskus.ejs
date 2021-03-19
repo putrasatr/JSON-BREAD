@@ -376,9 +376,8 @@
             let data = request.response
             let obj = JSON.parse(data).obj
             let Kas = document.getElementById('Kas')
-            Kas.innerHTML = ' ' + obj.Kas.length
+            Kas.innerHTML = ' ' + obj.Kas
             // Kas.append()
-
             Pagination.Init(document.getElementById('pagination'), {
                 size: JSON.parse(data).pages, // pages size
                 page: JSON.parse(data).page,  // selected page

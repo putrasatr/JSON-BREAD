@@ -14,13 +14,5 @@
       "float": 31,
       "date": "2021-12-31",
       "boolean": true
-   },
-   {
-      "id": 3,
-      "string": "nonolive",
-      "integer": 14324,
-      "float": 12,
-      "date": "2021-12-31",
-      "boolean": false
    }
 ]

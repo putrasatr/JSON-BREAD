@@ -7,10 +7,10 @@ const port = 3000
 
 
 //render tampilan
-app.set('views', path.join(__dirname, ''));
+app.set('views', path.join(__dirname, './views'));
 app.set('view engine', 'ejs');
 
-let data = JSON.parse(fs.readFileSync(path.join(__dirname, 'data.json'), 'utf8'));
+let data = JSON.parse(fs.readFileSync(path.join(__dirname, './data/data.json'), 'utf8'));
 
 let writeData = (data) => {
     fs.writeFileSync('data.json', JSON.stringify(data, null, 3));
@@ -147,7 +147,7 @@ app.get('/kaskus/', function (req, res, next) {
 })
 app.get('/api/kaskus/:page/:count', function (req, res, next) {
     const { count } = req.params
-    let obj = { all: [], Kas: [], Kus: [], KasKus: [] }
+    let obj = { all: [], Kas: 0, Kus: 0, KasKus: 0 }
 
     for (let i = 1; i <= Number(count); i++) {
         let hasil = i * 2
@@ -156,9 +156,8 @@ app.get('/api/kaskus/:page/:count', function (req, res, next) {
         else if (hasil % 4 === 0) obj.all.push('KAS')
         else obj.all.push(i * 2)
     }
-    obj.all.map(item => item == 'KAS' ? obj.Kas.push(item) : item == 'KUS' ? obj.Kus.push(item) : item == 'KASKUS' ? obj.KasKus.push(item) : '')
+    obj.all.map(item => item == 'KAS' ? obj.Kas++ : item == 'KUS' ? obj.Kus++ : item == 'KASKUS' ? obj.KasKus++ : '')
     const page = req.params.page || 1
-    console.log(page)
     const limit = 5
     const total = obj.all.length;
     const url = req.url == '/kaskus/' ? '/kaskus/?page=1' : req.url
