@@ -290,12 +290,11 @@ a:-webkit-any-link {
 }
 .disabled a{
     pointer-events: none;
-    cursor: none;
     background-color: rgb(179, 178, 178);
     text-decoration: none;
     color: rgb(68, 68, 68) !important;
 }
 .active a{
-background-color: blue !important;
+background-color: rgb(0, 0, 0) !important;
 color: white !important;
 }

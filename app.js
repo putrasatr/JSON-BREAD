@@ -3,6 +3,7 @@ const path = require('path');
 const app = express()
 const fs = require('fs')
 const bodyParser = require('body-parser');
+const { getDataFiltered } = require('./helpers');
 const port = 3000
 
 
@@ -24,23 +25,6 @@ const writeData = (data) => {
 }
 
 //Rendering Home
-function getDataFiltered(data, params) {
-    let result = []
-    if ("id" in params[0]) return [data[params[0]["id"]]]
-    return data.filter((i, idx) => {
-        i["index"] = idx
-        for (const key in params[0]) {
-            // console.log(key,params[0][key],i[key],params[0][key].includes(i[key]))
-            if (params[0][key].includes(i[key])) {
-                i["status"] == false ? i["status"] = false : i["status"] = true
-                result.push(i)
-            } else {
-                i["status"] = false
-            }
-        }
-        return result
-    }).filter(item => item.status)
-}
 app.get('/', function (req, res, next) {
     let data = JSON.parse(fs.readFileSync(path.join(__dirname, './db/data.json'), 'utf8'));
     let page = req.query.page || 1
@@ -97,7 +81,6 @@ app.get('/', function (req, res, next) {
         total = data.length
         dataFiltered = data.map((i, idx) => { i["index"] = idx; return i }).splice(offset, limit)
     }
-    console.log(dataFiltered)
     const pages = Math.ceil(total / limit)
     res.render('index.ejs', {
         data: dataFiltered,
@@ -141,6 +124,7 @@ app.get('/edit/:id', function (req, res, next) {
 
 app.post('/edit/:id', function (req, res) {
     let idx = req.params.id;
+    console.log(req.body)
     data[idx] = {
         string: req.body.string,
         integer: parseInt(req.body.integer),

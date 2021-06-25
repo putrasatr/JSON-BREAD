@@ -18,14 +18,14 @@
       "integer": 14325,
       "float": 4.554,
       "date": "2018-08-25",
-      "boolean": true
+      "boolean": "false"
    },
    {
       "string": "misantrophy",
       "integer": 14327,
       "float": 4.554,
       "date": "2018-08-25",
-      "boolean": true
+      "boolean": "true"
    },
    {
       "string": "Rex Orange County",
