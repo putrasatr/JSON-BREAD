@@ -53,8 +53,9 @@
 }
 
 .rowdate2 {
-    /* margin-left: 130px; */
+    margin-right: 20px;
     width: 20%;
+    float: right;
     /* padding: 5px; */
     font-size: 15spx;
 }
