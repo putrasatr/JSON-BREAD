@@ -1,8 +1,11 @@
 .container {
-    margin:  0px 200px;
+    margin:  0px auto;
+    max-width: 1600px;
     font-family: Arial, Helvetica, sans-serif;
     background-color: whitesmoke;
     border: 0px 4px solid;
+    /* display: flex; */
+    /* position: relative; */
 }
 .judul {
     color: rgb(24, 6, 6);
@@ -10,9 +13,10 @@
 }
 
 .rowinput {
+    width: 70%;
     margin-right: 20px;
     padding: 10px;
-    padding-right: 550px;
+    /* padding-right: 550px; */
     float: right;
     font-size: 15px;
     border: none;
@@ -23,10 +27,11 @@
 }
 
 .rowdate {
-    margin-right: 620px;
-    padding: 6px;
-    padding-right: 40px;
+    margin-right: 20px;
+    /* padding: 6px;
+    padding-right: 40px; */
     float: right;
+
     font-size: 15px;
     border: none;
     border-bottom: 2.5px solid  #68686b;
@@ -36,9 +41,9 @@
 }
 
 .rowdate1 {
-    margin-left: 125px;
-    padding: 6px;
-    padding-right: 40px;
+    /* margin-left: 125px; */
+    /* padding: 6px; */
+    /* padding-right: 40px; */
     font-size: 15px;
     border: none;
     border-bottom: 2.5px solid  #68686b;
@@ -48,15 +53,16 @@
 }
 
 .rowdate2 {
-    margin-left: 130px;
-    padding: 5px;
+    /* margin-left: 130px; */
+    width: 20%;
+    /* padding: 5px; */
     font-size: 15spx;
 }
 
 .rowboolean {
     margin-right: 20px;
     padding: 5px;
-    padding-right: 630px;
+    /* padding-right: 630px; */
     float: right;
     font-size: 14px;
     border: none;
@@ -69,8 +75,9 @@
 .rowinput-on-edit{
     margin-right: 20px;
     margin-top: 0%;
+    width: 70%;
     padding: 10px;
-    padding-right: 770px;
+    /* padding-right: 770px; */
     float: right;
     font-size: 15px;
     border: none;
@@ -229,13 +236,65 @@
     background-color: rgb(182, 179, 179);
     color: black;
 }
+ul{
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+li {
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
 .pagination {
-    display: inline-block;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius:0.25rem
+}
+.page-item:first-child .page-link {
+    margin-left: 0;
+    border-top-left-radius: .25rem;
+    border-bottom-left-radius: .25rem;
+}
+.page-link:not(:disabled):not(.disabled) {
+    cursor: pointer;
+}
+.page-link {
+    position: relative;
+    display: block;
+    padding: .5rem .75rem;
+    margin-left: -1px;
+    line-height: 1.25;
+    color: #007bff;
+    background-color: #fff;
+    border: 1px solid #dee2e6;
+}
+a {
+    color: #000000 !important;
+    text-decoration: none !important;
+    background-color: transparent;
+    -webkit-text-decoration-skip: objects;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
+a:-webkit-any-link {
+    color: -webkit-link;
+    cursor: pointer;
+    text-decoration: underline;
+}
+.disabled a{
+    pointer-events: none;
+    cursor: none;
+    background-color: rgb(179, 178, 178);
     text-decoration: none;
-  }
+    color: rgb(68, 68, 68) !important;
+}
+.active a{
+background-color: blue !important;
+color: white !important;
+}

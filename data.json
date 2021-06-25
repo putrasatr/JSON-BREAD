@@ -4,18 +4,46 @@
       "integer": 1,
       "float": 4.5,
       "date": "2018-09-25",
-      "boolean": "true"
+      "boolean": true
    },
    {
-      "string": "misanthrope",
-      "integer": 143212,
+      "string": "misantrophy",
+      "integer": 14321,
       "float": 4.554,
       "date": "2018-08-25",
-      "boolean": "true"
+      "boolean": true
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14322,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": true
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14323,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": true
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "false"
    },
    {
       "string": "misantrophy",
       "integer": 14325,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": true
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14326,
       "float": 4.554,
       "date": "2018-08-25",
       "boolean": true
@@ -56,24 +84,10 @@
       "boolean": true
    },
    {
-      "string": "Payung Teduh - Cerita gunung dan langit",
-      "integer": 1,
-      "float": 11,
-      "date": "0001-01-31",
-      "boolean": false
-   },
-   {
-      "string": "The Beatles-Come Together",
-      "integer": 8391,
-      "float": 1293,
-      "date": "2024-11-02",
+      "string": "Rex Orange County",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
       "boolean": true
-   },
-   {
-      "string": "Harry Styles - Sign Of The Times",
-      "integer": 231,
-      "float": 312,
-      "date": "2021-12-31",
-      "boolean": false
    }
 ]
