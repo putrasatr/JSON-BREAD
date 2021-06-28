@@ -14,6 +14,7 @@
     <div class="container">
         <form action="" method="GET">
             <input type="hidden" name="page" value="1">
+            <input type="hidden" name="search" value="true">
 
             <div class="judul">
                 <h1>BREAD (Browse, Read, Add, Edit, Delete)</h1>
@@ -59,14 +60,15 @@
             <div class="check">
                 <label for="exampleCheck1" class="">
                     <input class="checkbox" type="checkbox" id="exampleCheck1" name="checkDate" <%=query.checkDate=="on"
-                        ? "checked" : "" %>>Date
+                        ? "checked" : "" %>>Date Range
                 </label>
                 <input class="rowdate" id="masukan" type="date" placeholder="Date" name="start_date"
-                    value=" <%= query.start_date %>">
+                    value="<%= query.start_date %>">
                 <p class="rowdate2">To</p>
             </div>
-            <div class="check"> 
-                <input class="rowdate" id="masukan" type="date" placeholder="Date" name="end_date">
+            <div class="check">
+                <input class="rowdate" id="masukan" type="date" placeholder="Date" name="end_date"
+                    value="<%= query.end_date %>">
             </div>
 
             <div class="check">
@@ -82,6 +84,7 @@
                     <option value="false">False</option>
                     <option value="true">True</option>
                 </select>
+                <input type="hidden" name="sorter" value="<%= query.sorter%>">
             </div>
 
             <button class="tapcari">Search</button>
@@ -90,8 +93,52 @@
             </a>
 
         </form>
-
+        <div class="check">
+            <form action="" method="get">
+                <input type="hidden" value="1" name="page">
+                <input type="hidden" value="<%=query.checkid%>" name="checkId">
+                <input type="hidden" value="<%=query.index%>" name="index">
+                <input type="hidden" value="<%=query.checkString%>" name="checkString">
+                <input type="hidden" value="<%=query.string%>" name="string">
+                <input type="hidden" value="<%=query.checkInteger%>" name="checkInteger">
+                <input type="hidden" value="<%=query.integer%>" name="integer">
+                <input type="hidden" value="<%=query.checkFloat%>" name="checkFloat">
+                <input type="hidden" value="<%=query.float%>" name="float">
+                <input type="hidden" value="<%=query.checkDate%>" name="checkDate">
+                <input type="hidden" value="<%=query.start_date%>" name="start_date">
+                <input type="hidden" value="<%=query.end_date%>" name="end_date">
+                <input type="hidden" value="<%=query.checkBoolean%>" name="checkBoolean">
+                <input type="hidden" value="<%=query.boolean%>" name="boolean">
+                <input type="hidden" value="true" name="search">
+                <select name="sorter" id="sort" class="rowdate" onchange="this.form.submit()">
+                    <%if(!(query.sorter)){%>
+                        <option value="">Sort By</option>
+                        <%listSorter.forEach(({value,name})=>{%>
+                            <option value="<%=value%>"><%=name%>
+                            </option>
+                            <%})%>
+                                <%}else{listSorter.forEach(({value,name})=>{%>
+                                    <option value="<%=value%>" <%=value==query.sorter ? 'selected' : '' %>><%=name%>
+                                    </option>
+                                    <%})%>
+                                        <%}%>
+                </select>
+                <select name="limit" id="limit" class="rowdate" onchange="this.form.submit()">
+                    <%if(!(query.limit)){%>
+                        <%listLimit.forEach(({value,name})=>{%>
+                            <option value="<%=value%>"><%=name%>
+                            </option>
+                            <%})%>
+                                <%}else{listLimit.forEach(({value,name})=>{%>
+                                    <option value="<%=value%>" <%=value==query.limit ? 'selected' : '' %>><%=name%>
+                                    </option>
+                                    <%})%>
+                                        <%}%>
+                </select>
+            </form>
+        </div>
         <div>
+
             <table class="column">
                 <thead>
 
