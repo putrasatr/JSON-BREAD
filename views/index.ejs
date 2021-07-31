@@ -114,7 +114,8 @@
                     <%if(!(query.sorter)){%>
                         <option value="">Sort By</option>
                         <%listSorter.forEach(({value,name})=>{%>
-                            <option value="<%=value%>"><%=name%>
+                            <option value="<%=value%>">
+                                <%=name%>
                             </option>
                             <%})%>
                                 <%}else{listSorter.forEach(({value,name})=>{%>
@@ -126,7 +127,8 @@
                 <select name="limit" id="limit" class="rowdate" onchange="this.form.submit()">
                     <%if(!(query.limit)){%>
                         <%listLimit.forEach(({value,name})=>{%>
-                            <option value="<%=value%>"><%=name%>
+                            <option value="<%=value%>">
+                                <%=name%>
                             </option>
                             <%})%>
                                 <%}else{listLimit.forEach(({value,name})=>{%>
@@ -150,6 +152,7 @@
                         <th>Date</th>
                         <th>Boleean</th>
                         <th style="text-align: center;">Action</th>
+                        <th style="text-align: center;"></th>
                     </tr>
                 </thead>
                 <tbody style="width: 100%; background-color: whitesmoke; color: black; ">
@@ -180,9 +183,12 @@
                             </td>
 
                             <td class="valfont" style="text-align: center;">
-                                <a href="edit/<%= item.index + 1 %>">
-                                    <button class="butt">Edit</button>
-                                </a>
+                                <form action="/edit/<%= item.index + 1 %>" method="get">
+                                    <button class="butt" type="submit">Edit</button>
+                                    <input type="hidden" name="url" value="<%=url%>">
+                                </form>
+                            </td>
+                            <td class="valfont" style="text-align: center;">
                                 <a href="delete/<%= item.index  + 1%>">
                                     <button class="buttdel">Delete</button>
                                 </a>
@@ -213,14 +219,12 @@
                         </li>
             </ul>
         </nav>
-
-        <div>
-            <a href="add">
-                <button class="addbut">Add</button>
-            </a>
-        </div>
-
-
+        <form action="/add" method="get">
+            <div>
+                <button type="submit" class="addbut">Add</button>
+                <input type="hidden" name="url" value="<%= url%>" />
+            </div>
+        </form>
     </div>
 </body>
 

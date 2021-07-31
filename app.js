@@ -117,7 +117,10 @@ app.get('/', function (req, res, next) {
 
 //Add 
 app.get('/add', function (req, res, next) {
-    res.render('add.ejs');
+    const { url: urlBack } = req.query
+    res.render('add.ejs', {
+        urlBack
+    });
 });
 
 app.post('/add', function (req, res) {
@@ -137,9 +140,11 @@ app.post('/add', function (req, res) {
 app.get('/edit/:id', function (req, res, next) {
     let data = JSON.parse(fs.readFileSync(path.join(__dirname, './db/data.json'), 'utf8'));
     let id = req.params.id - 1;
+    const { url: urlBack } = req.query
     res.render('edit.ejs', {
         item: data[id],
-        id: id
+        id: id,
+        urlBack
     });
 });
 
@@ -169,7 +174,7 @@ app.get('/kaskus', function (req, res, next) {
     const { count } = req.query
     let kaskus = []
     if (count) kaskus = getKasKus(count)
-    res.render('kaskus.ejs',{
+    res.render('kaskus.ejs', {
         kaskus
     })
 })
