@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-BREAD-ADD</title>
+</head>
+
+<link rel="stylesheet" href="css/style.css"></link>
+
+<body class="body">
+    <div class="container">
+        <form action="add" method="POST">
+
+            <div class="judul">
+                <h1>Add Data </h1>
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">String</label>
+                <input class="rowinput" type="text" placeholder="String" name="string">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Integer</label>
+                <input class="rowinput" id="masukan" type="text" placeholder="Integer" name="integer">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Float</label>
+                <input class="rowinput" id="masukan" type="text" placeholder="Float" name="float">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Date</label>
+                <input class="rowdate" type="date" value="2021-12-31" placeholder="End Date" name="date">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Boolean</label>
+                <select class="rowboolean" name="boolean" required>
+                    <option value="" selected>Choose the boolean ...</option>
+                    <option value="false">False</option>
+                    <option value="true">True</option>
+                </select>
+            </div>
+                <button class="updatebut">Save</button>
+                <a href="<%= urlBack%>"class="backbut">Back</a>
+
+        </form>
+    </div>
+</body>
+
+</html>

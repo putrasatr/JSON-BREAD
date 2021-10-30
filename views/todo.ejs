@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+        <%= title%>
+    </title>
+</head>
+<link rel="stylesheet" href="/css/style.css">
+</link>
+
+<body class="body">
+    <div class="container" style="height: 100vh;">
+        <form action="" method="GET">
+            <input type="hidden" name="page" value="1">
+            <input type="hidden" name="search" value="true">
+
+            <div class="judul">
+                <a href="/">
+                    <span>&laquo; Back</span>
+                </a>
+                <h1>Todo</h1>
+            </div>
+            <div class="box-center row">
+                <img max-width="100%" height="100%" src="img/gtSdone.jpeg" alt="">
+                <div class="card-list">
+                    <div class="center p10">
+                        <span class="txt-md">List</span>
+                    </div>
+                    <div class="center p10">
+                        <input placeholder="Filter..." autocomplete="off" name="filter" class="todo-filter" />
+                    </div>
+                    <div class="center p10 col todo-list relative">
+                        <%data.forEach((item,i)=>{%>
+                            <div class="center relative">
+                                <span class="todo-item <%=item.status?'complete':'uncomplete'%>">
+                                    <%= item.title%>
+                                </span>
+                                <div class="dot-label">o</div>
+                            </div>
+                            <%});%>
+                    </div>
+                    <div class="todo-form">
+                        <button>
+                            <span>Add</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

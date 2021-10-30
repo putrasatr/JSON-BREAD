@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON-BREAD-EDIT</title>
+</head>
+
+<link rel="stylesheet" href="/css/style.css">
+</link>
+
+<body class="body">
+    <div class="container">
+        <form action="/edit/<%= id %>" method="POST">
+
+            <div class="judul">
+                <h1>Edit Data</h1>
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">ID</label>
+                <p class="rowinput-on-edit">
+                    <%= Number(id) + 1 %>
+                </p>
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">String</label>
+                <input class="rowinput" type="text" placeholder="String" name="string" value="<%= item.string  %>">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Integer</label>
+                <input class="rowinput" id="masukan" type="text" placeholder="Integer" name="integer"
+                    value="<%= item.integer  %>">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Float</label>
+                <input class="rowinput" id="masukan" type="text" placeholder="Float" name="float"
+                    value="<%= item.float  %>">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Date</label>
+                <input class="rowdate" id="masukan" type="date" placeholder="Date" name="date"
+                    value="<%= item.date  %>">
+            </div>
+
+            <div class="check">
+                <label for="exampleCheck1" class="">Boolean</label>
+                <select class="rowboolean" name="boolean" value="<%= item.boolean  %>" required>
+                    <option value="" selected>Choose the boolean ...</option>
+                    <option value="false" <%=!item.boolean ?'selected':''%>>False</option>
+                    <option value="true" <%=item.boolean ?'selected':''%>>True</option>
+                </select>
+            </div>
+            <button class="updatebut">Update</button>
+            <a href="<%=urlBack%>" class="backbut">Back</a>
+        </form>
+    </div>
+
+</body>
+
+</html>

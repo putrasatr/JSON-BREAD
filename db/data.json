@@ -1,0 +1,135 @@
+[
+   {
+      "string": "misanthroped",
+      "integer": 143212,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "true"
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14325,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "false"
+   },
+   {
+      "string": "misantrophy",
+      "integer": 14327,
+      "float": 4.554,
+      "date": "2021-06-26",
+      "boolean": "true"
+   },
+   {
+      "string": "Rex Orange County - Sunflower",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "false"
+   },
+   {
+      "string": "Rex Orange County",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "true"
+   },
+   {
+      "string": "Rex Orange County",
+      "integer": 14324,
+      "float": 4.554,
+      "date": "2018-08-25",
+      "boolean": "true"
+   },
+   {
+      "string": "Payung Teduh - Cerita gunung dan langit",
+      "integer": 1,
+      "float": 11,
+      "date": "0001-01-31",
+      "boolean": false
+   },
+   {
+      "string": "The Beatles-Come Together",
+      "integer": 8391,
+      "float": 1293,
+      "date": "2024-11-02",
+      "boolean": "true"
+   },
+   {
+      "string": "Harry Styles - Sign Of The Times",
+      "integer": 231,
+      "float": 312,
+      "date": "2021-01-07",
+      "boolean": "true"
+   },
+   {
+      "string": "Darso - Just A Dream",
+      "integer": 42,
+      "float": 2,
+      "date": "2034-12-28",
+      "boolean": "true"
+   },
+   {
+      "string": "Leave The Door Open",
+      "integer": 6445,
+      "float": 2,
+      "date": "2034-12-28",
+      "boolean": "true"
+   },
+   {
+      "string": "Jeon So Min",
+      "integer": 4212,
+      "float": 2,
+      "date": "2030-12-28",
+      "boolean": "true"
+   },
+   {
+      "string": "Song Ji Hyo",
+      "integer": 42,
+      "float": 2,
+      "date": "2334-12-28",
+      "boolean": "false"
+   },
+   {
+      "string": "Marlboro Night",
+      "integer": 2,
+      "float": 2,
+      "date": "2004-12-28",
+      "boolean": "true"
+   },
+   {
+      "string": "Efek Rumah Kaca",
+      "integer": 523,
+      "float": 123,
+      "date": "2012-12-31",
+      "boolean": "true"
+   },
+   {
+      "string": "Kim Jong Kook - One Man",
+      "integer": 1,
+      "float": 12,
+      "date": "2021-11-11",
+      "boolean": "true"
+   },
+   {
+      "string": "Teenage Death Star - Jhonny In My Head",
+      "integer": 2313,
+      "float": 321,
+      "date": "2016-12-31",
+      "boolean": "true"
+   },
+   {
+      "string": "Kunto Aji - Konon Katanya",
+      "integer": 3123,
+      "float": 80,
+      "date": "2019-10-29",
+      "boolean": "true"
+   },
+   {
+      "string": "Payung Teduh - Sebuah Cerita",
+      "integer": 231,
+      "float": 2312,
+      "date": "1991-09-30",
+      "boolean": "true"
+   }
+]
