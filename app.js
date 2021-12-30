@@ -9,7 +9,7 @@ const {
   generateIndex,
   getKasKus,
 } = require("./helpers");
-const port = 3000;
+const port = 3007;
 
 //render tampilan
 app.set("views", path.join(__dirname, "views"));
@@ -98,7 +98,7 @@ app.get("/", function (req, res, next) {
       params.length > 0 ? (params[0]["float"] = float) : params.push({ float });
     }
     if ((start_date || end_date) && checkDate) {
-      paramsDate.push(start_date || "0000-00-00", end_date || "9999-99-99");
+      paramsDate.push(start_date || "0000-00-00", end_date || "9999-12-31");
     }
     if (boolean && checkBoolean) {
       params.length > 0
@@ -120,7 +120,7 @@ app.get("/", function (req, res, next) {
     total = data.length;
     dataFiltered = data.splice(offset, limit);
   }
-  // console.log(paramsDate)
+  console.log(params);
   const pages = Math.ceil(total / limit);
   res.render("index.ejs", {
     data: dataFiltered,
