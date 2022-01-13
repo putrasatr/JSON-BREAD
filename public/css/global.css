@@ -1,0 +1,7 @@
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: rgb(219, 215, 215);
+}

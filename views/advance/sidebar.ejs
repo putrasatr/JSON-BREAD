@@ -1,0 +1,32 @@
+<div class="position-fixed p-0 " style="width: 250px; left:0; top: 0;">
+    <div class="bg-warning text-light fw-bold p-2">
+        <h4>Sidebar</h4>
+    </div>
+    <div class="mt-4 shadow p-3 pl-5 flex rounded-2">
+        <div class="p-1 border-end-0 border-top-0 border-start-0 border border-warning">
+            <p class="text-warning ">View Mode</p>
+            <div class="ps-4">
+                <p class="mb-1">Compact</p>
+                <p class="mb-1">List</p>
+                <p class="mb-1">Default</p>
+            </div>
+        </div>
+        <div class="p-1 border-end-0 border-top-0 border-start-0 border border-warning">
+            <p class="text-warning ">Sort By</p>
+            <div class="ps-4">
+                <% listFilter.forEach((item)=>{%>
+                    <p class="mb-1">
+                        <%= item %>
+                    </p>
+                    <% }); %>
+            </div>
+        </div>
+        <div class="p-1 border-end-0 border-top-0 border-start-0 border border-warning">
+            <p class="text-warning ">Filter By Tag</p>
+            <div class="ps-4">
+                <p class="mb-1">Salad</p>
+                <p>Ngoding</p>
+            </div>
+        </div>
+    </div>
+</div>

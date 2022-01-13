@@ -3,6 +3,7 @@ const path = require("path");
 const app = express();
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const advanceRouter = require("./routes/advance");
 const {
   getDataFiltered,
   getSortedData,
@@ -24,6 +25,7 @@ app.use(
     extended: false,
   })
 );
+app.use("/advance", advanceRouter);
 let data = JSON.parse(
   fs.readFileSync(path.join(__dirname, "./db/data.json"), "utf8")
 );

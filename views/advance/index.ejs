@@ -1,0 +1,21 @@
+<%- include('./header.ejs')%>
+    <main class="container-xxl p-0" style="position: relative;">
+        <section class="row flex direction-row">
+            <%- include('./sidebar.ejs')%>
+                <div style="margin-left: 260px;">
+                    <div class="d-flex flex-row">
+                        <% routers.forEach(item=>{%>
+                            <div
+                                class="rounded-3 p-1 ms-2 px-4 mt-2  shadow-sm <%= item.isActive ? 'bg-warning text-light' : 'bg-white'  %>">
+                                <a href="<%= item.pathTo%>">
+                                    <p class="mb-0">
+                                        <%= item.title%>
+                                    </p>
+                                </a>
+                            </div>
+                            <%})%>
+                    </div>
+                </div>
+        </section>
+    </main>
+    <%- include('./footer.ejs')%>
