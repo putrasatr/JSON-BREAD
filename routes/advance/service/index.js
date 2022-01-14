@@ -1,10 +1,12 @@
-const express = require("express");
-const router = express.Router();
+const { writeData } = require("../../../helpers");
+const datas = require("../../../db/advance-data.json");
 
-router.get("/", (req, res, next) => {
-  res.render("advance/", {
-    title: "Advance Crud ever",
-  });
-});
+const addService = (data) => {
+  const id = +datas.last_id + 1;
+  data["id"] = id;
+  datas.data.push(data);
+  datas.last_id = id;
+  writeData("/../db/advance-data.json", datas);
+};
 
-module.exports = router;
+exports.addService = addService;

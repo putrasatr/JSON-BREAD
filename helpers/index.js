@@ -1,3 +1,6 @@
+const path = require("path");
+const fs = require("fs");
+
 function getDataFiltered(data, params, paramsDate) {
   let result = [];
   const loop = (i, params) => {
@@ -78,5 +81,16 @@ function getKasKus(n) {
   }
   return arr;
 }
-
-module.exports = { getDataFiltered, getSortedData, generateIndex, getKasKus };
+const writeData = (filePath, data) => {
+  fs.writeFileSync(
+    path.join(__dirname, filePath),
+    JSON.stringify(data, null, 2)
+  );
+};
+module.exports = {
+  getDataFiltered,
+  getSortedData,
+  generateIndex,
+  getKasKus,
+  writeData,
+};

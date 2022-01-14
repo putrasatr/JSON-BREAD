@@ -21,7 +21,7 @@
         <section class="row flex direction-row">
             <%- include('./sidebar.ejs')%>
                 <div style="padding-left: 260px;">
-                    <div class="d-flex flex-row">
+                    <div class="d-flex flex-row sticky-top bg-white">
                         <% routers.forEach(item=>{%>
                             <div
                                 class="rounded-3 p-1 ms-2 px-4 mt-2  shadow-sm <%= item.isActive ? 'bg-warning text-light' : 'bg-white'  %>">

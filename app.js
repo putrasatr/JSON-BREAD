@@ -12,7 +12,7 @@ const {
 } = require("./helpers");
 const port = 3007;
 
-//render tampilan
+//render treguler/ampilan
 app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
 
@@ -122,9 +122,8 @@ app.get("/", function (req, res, next) {
     total = data.length;
     dataFiltered = data.splice(offset, limit);
   }
-  console.log(params);
   const pages = Math.ceil(total / limit);
-  res.render("index.ejs", {
+  res.render("reguler/index.ejs", {
     data: dataFiltered,
     query: req.query,
     url,
@@ -140,7 +139,7 @@ app.get("/", function (req, res, next) {
 //Add
 app.get("/add", function (req, res, next) {
   const { url: urlBack } = req.query;
-  res.render("add.ejs", {
+  res.render("reguler/add.ejs", {
     urlBack,
   });
 });
@@ -167,7 +166,7 @@ app.get("/edit/:id", function (req, res, next) {
   );
   let id = req.params.id - 1;
   const { url: urlBack } = req.query;
-  res.render("edit.ejs", {
+  res.render("reguler/edit.ejs", {
     item: data[id],
     id: id,
     urlBack,
@@ -202,13 +201,13 @@ app.get("/kaskus", function (req, res, next) {
   const { count } = req.query;
   let kaskus = [];
   if (count) kaskus = getKasKus(count);
-  res.render("kaskus.ejs", {
+  res.render("reguler/kaskus.ejs", {
     kaskus,
   });
 });
 
 app.get("/todo", function (req, res, next) {
-  res.render("todo.ejs", {
+  res.render("reguler/todo.ejs", {
     title: "Todo",
     data: [
       { title: "Ngoding", status: false, tag: [] },

@@ -1,5 +1,56 @@
 <%- include('./partials/header.ejs')%>
-    <div>
-        <h1>Add</h1>
+    <div class="shadow card p-3 mt-5" style="width: 70%;">
+        <div class="row">
+            <h3 class="col">Add Data</h3>
+            <div class="bg-secondary  col-sm-4 p-1" style="width: 100px; border-radius: 10px;">
+                <p class="m-0 text-light center">Import</p>
+            </div>
+        </div>
+        <form action="/advance/add" method="post">
+            <div class="pt-4">
+                <div class="form-floating">
+                    <textarea class="form-control" style="height: 150px;" name="string"
+                        placeholder="Leave a comment here" id="floatingTextareaString" required></textarea>
+                    <label for="floatingTextareaString">String</label>
+                </div>
+            </div>
+            <div class="pt-4">
+                <div class="form-floating">
+                    <input type="number" class="form-control" placeholder="Leave a comment here" name="integer"
+                        id="integer" required></input>
+                    <label for="integer">Integer</label>
+                </div>
+            </div>
+            <div class="pt-4">
+                <div class="form-floating">
+                    <input type="number" class="form-control" placeholder="Leave a comment here" name="float" id="float"
+                        required></input>
+                    <label for="float">Float</label>
+                </div>
+            </div>
+            <div class="pt-4 row">
+                <div class="col form">
+                    <label for="date">Start Date</label>
+                    <input class="form-control" type="date" name="start-date" id="date" required>
+                </div>
+                <div class="col form">
+                    <label for="date">End Date</label>
+                    <input class="form-control" type="date" name="end-date" id="date" required>
+                </div>
+            </div>
+            <div class="pt-4">
+                <div class="form-floating">
+                    <select type="number" class="form-control" placeholder="Leave a comment here" name="boolean"
+                        id="boolean" required>
+                        <option value="true">Ya</option>
+                        <option value="false">Tidak</option>
+                    </select>
+                    <label for="boolean">Publish ?</label>
+                </div>
+            </div>
+            <div class="pt-4 d-flex" style="justify-content: right;">
+                <button class="btn btn-warning text-light" type="submit">Add</button>
+            </div>
+        </form>
     </div>
     <%- include('./partials/footer.ejs')%>
