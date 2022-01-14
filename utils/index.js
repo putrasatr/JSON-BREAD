@@ -1,25 +1,30 @@
 const listFilter = ["String", "Integer", "Boolean", "Float", "Date", "ID"];
-const routers = [
+const getRouters = (route) => [
   {
-    isActive: true,
+    isActive: !route,
+    title: "Home",
+    pathTo: "/advance",
+  },
+  {
+    isActive: route === "add",
     title: "Add",
     pathTo: "/advance/add",
   },
   {
-    isActive: false,
+    isActive: route === "favorite",
     title: "Favorite",
     pathTo: "/advance/favorite",
   },
   {
-    isActive: false,
+    isActive: route === "edit",
     title: "Batch Edit",
     pathTo: "/advance/edit",
   },
   {
-    isActive: false,
+    isActive: route === "setting",
     title: "Setting",
     pathTo: "/advance/setting",
   },
 ];
 exports.listFilter = listFilter;
-exports.routers = routers;
+exports.getRouters = getRouters;

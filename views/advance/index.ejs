@@ -1,21 +1,22 @@
-<%- include('./header.ejs')%>
-    <main class="container-xxl p-0" style="position: relative;">
-        <section class="row flex direction-row">
-            <%- include('./sidebar.ejs')%>
-                <div style="margin-left: 260px;">
-                    <div class="d-flex flex-row">
-                        <% routers.forEach(item=>{%>
-                            <div
-                                class="rounded-3 p-1 ms-2 px-4 mt-2  shadow-sm <%= item.isActive ? 'bg-warning text-light' : 'bg-white'  %>">
-                                <a href="<%= item.pathTo%>">
-                                    <p class="mb-0">
-                                        <%= item.title%>
-                                    </p>
-                                </a>
+<%- include('./partials/header.ejs')%>
+    <div class="mt-3 container-fluid" style="width: 100%;">
+        <h1>Data</h1>
+        <div class="row" style="width: 100%;">
+            <% routers.forEach((item,i)=>{%>
+                <% if(i % 4===0){%>
+                    <div class="w-100 mt-4"></div>
+                    <%}%>
+                        <div class="col mx-3 card" style="width: 10%;">
+                            <div class="card-body">
+                                DATA <%=item.pathTo%>
                             </div>
-                            <%})%>
-                    </div>
-                </div>
-        </section>
-    </main>
-    <%- include('./footer.ejs')%>
+                            <div class="card-footer">
+                                <button class="btn btn-primary">
+                                    <%=item.title%>
+                                </button>
+                            </div>
+                        </div>
+                        <%})%>
+        </div>
+    </div>
+    <%- include('./partials/footer.ejs')%>
