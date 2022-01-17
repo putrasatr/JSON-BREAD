@@ -16,11 +16,6 @@ const getRouters = (route) => [
     pathTo: "/advance/favorite",
   },
   {
-    isActive: route === "edit",
-    title: "Batch Edit",
-    pathTo: "/advance/edit",
-  },
-  {
     isActive: route === "setting",
     title: "Setting",
     pathTo: "/advance/setting",

@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const { listFilter, getRouters } = require("../utils");
 
 function getDataFiltered(data, params, paramsDate) {
   let result = [];
@@ -87,10 +88,42 @@ const writeData = (filePath, data) => {
     JSON.stringify(data, null, 2)
   );
 };
+
+const getFilteredData = (data, params, getById = false) => {
+  let result = [];
+  data.forEach((item) => {
+    if (getById) {
+      if (Number(item.id) === Number(params)) {
+        result.push(item);
+        return;
+      }
+    }
+    for (const key in item) {
+      if (
+        `${item[key]}`.toLocaleLowerCase().includes(params.toLocaleLowerCase())
+      ) {
+        result.push(item);
+        return;
+      }
+    }
+  });
+  return getById ? result[0] : result;
+};
+const getInitialResponse = ({ route, title }) => {
+  return {
+    title,
+    listFilter,
+    data: false,
+    query: false,
+    routers: getRouters(route),
+  };
+};
 module.exports = {
   getDataFiltered,
   getSortedData,
   generateIndex,
   getKasKus,
   writeData,
+  getFilteredData,
+  getInitialResponse,
 };

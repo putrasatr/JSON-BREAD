@@ -21,15 +21,26 @@
         <section class="row flex direction-row">
             <%- include('./sidebar.ejs')%>
                 <div style="padding-left: 260px;">
-                    <div class="d-flex flex-row sticky-top bg-white">
+                    <div class="d-flex flex-row sticky-top bg-white shadow pb-2">
                         <% routers.forEach(item=>{%>
-                            <div
-                                class="rounded-3 p-1 ms-2 px-4 mt-2  shadow-sm <%= item.isActive ? 'bg-warning text-light' : 'bg-white'  %>">
-                                <a href="<%= item.pathTo%>">
+                            <a href="<%= item.pathTo%>">
+                                <div
+                                    class="rounded-3 p-1 ms-2 px-4 mt-2  shadow-sm <%= item.isActive ? 'bg-warning text-light' : 'bg-white'  %>">
                                     <p class="mb-0">
                                         <%= item.title%>
                                     </p>
-                                </a>
-                            </div>
+                                </div>
+                            </a>
                             <%})%>
+                                <% if(query){%>
+                                    <div class="col px-3 mt-1 ps-5">
+                                        <form action="" method="get">
+                                            <div class="form">
+                                                <input type="text" style="height: 40px;" class="form-control"
+                                                    name="string" id="string" value="<%= query.string%>"
+                                                    placeholder="Search.." <%=query.string ? ' autofocus' : '' %>>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <%}%>
                     </div>

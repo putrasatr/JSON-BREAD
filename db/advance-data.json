@@ -1,95 +1,14 @@
 {
-  "last_id": 10,
+  "last_id": 7,
   "data": [
     {
-      "string": "String",
+      "string": " DAta`",
       "integer": "123",
-      "float": "-123",
-      "start-date": "2022-01-07",
-      "end-date": "2022-01-28",
-      "boolean": "true",
-      "id": 1
-    },
-    {
-      "string": "String",
-      "integer": "123",
-      "float": "-123",
-      "start-date": "2022-01-07",
-      "end-date": "2022-01-28",
-      "boolean": "false",
-      "id": 2
-    },
-    {
-      "string": "String",
-      "integer": "123",
-      "float": "-123",
-      "start-date": "2022-01-07",
-      "end-date": "2022-01-28",
-      "boolean": "false",
-      "id": 3
-    },
-    {
-      "string": "String",
-      "integer": "123",
-      "float": "-123",
-      "start-date": "2022-01-07",
-      "end-date": "2022-01-28",
-      "boolean": "false",
-      "id": 4
-    },
-    {
-      "string": "Cara Nya Bagaimana",
-      "integer": "123",
-      "float": "-123",
-      "start-date": "2022-01-07",
-      "end-date": "2022-01-28",
-      "boolean": "false",
-      "id": 5
-    },
-    {
-      "string": "Just Wa",
-      "integer": "934",
-      "float": "88",
-      "start-date": "2022-01-13",
-      "end-date": "2022-01-13",
-      "boolean": "true",
-      "id": 6
-    },
-    {
-      "string": "Just Wa",
-      "integer": "934",
-      "float": "88",
-      "start-date": "2022-01-13",
-      "end-date": "2022-01-13",
+      "float": "123",
+      "start-date": "2022-01-21",
+      "end-date": "2022-01-20",
       "boolean": "true",
       "id": 7
-    },
-    {
-      "string": "Just Wa",
-      "integer": "934",
-      "float": "88",
-      "start-date": "2022-01-13",
-      "end-date": "2022-01-13",
-      "boolean": "true",
-      "id": 8
-    },
-    {
-      "string": "Just Wa",
-      "integer": "934",
-      "float": "88",
-      "start-date": "2022-01-13",
-      "end-date": "2022-01-13",
-      "boolean": "true",
-      "id": 9
-    },
-    {
-      "string": "Just Wa",
-      "integer": "934",
-      "float": "88",
-      "start-date": "2022-01-13",
-      "end-date": "2022-01-13",
-      "boolean": "true",
-      "id": 10
     }
   ]
 }

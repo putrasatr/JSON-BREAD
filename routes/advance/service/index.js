@@ -8,5 +8,10 @@ const addService = (data) => {
   datas.last_id = id;
   writeData("/../db/advance-data.json", datas);
 };
+const deleteService = (data, id) => {
+  data.data.splice(id, 1);
+  writeData("/../db/advance-data.json", data);
+};
 
 exports.addService = addService;
+exports.deleteService = deleteService;

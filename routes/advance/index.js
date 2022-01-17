@@ -1,36 +1,41 @@
 const express = require("express");
 const router = express.Router();
-const { listFilter, getRouters } = require("../../utils");
-const { addService } = require("./service");
-const datas = require("../../db/advance-data.json");
-const { getDataFiltered, generateIndex } = require("../../helpers");
+const { addService, deleteService } = require("./service");
+const { getFilteredData, getInitialResponse } = require("../../helpers");
 
 router.get("/", (req, res, next) => {
-  generateIndex(datas.data);
-  let params = [];
+  const datas = require("../../db/advance-data.json");
   const { string } = req.query;
-  if (string) {
-    params.length > 0
-      ? (params[0]["string"] = string)
-      : params.push({ string });
-  }
   let data = datas.data;
-  if (params.length)
-    data = getDataFiltered(datas.data, params[0] ? params : [{}], []);
+  if (string) data = getFilteredData(datas.data, string);
   res.render("advance/", {
-    title: "Advance Crud ever",
-    listFilter,
-    data,
+    ...getInitialResponse({
+      title: "Advance CRUD",
+    }),
     query: req.query,
-    routers: getRouters(),
+    data: data,
   });
 });
 
 router.get("/add", (req, res, next) => {
-  res.render("advance/add", {
-    title: "Add",
-    listFilter,
-    routers: getRouters("add"),
+  res.render("advance/form", {
+    ...getInitialResponse({
+      title: "Add",
+      route: "add",
+    }),
+  });
+});
+
+router.get("/edit/:id", (req, res, next) => {
+  const { id } = req.params;
+  const datas = require("../../db/advance-data.json");
+  const data = getFilteredData(datas.data, id, true);
+  res.render("advance/form", {
+    ...getInitialResponse({
+      title: "Edit",
+      route: "edit",
+    }),
+    data,
   });
 });
 
@@ -41,10 +46,18 @@ router.post("/add", (req, res, next) => {
 
 router.get("/favorite", (req, res, next) => {
   res.render("advance/favorite", {
-    title: "Favorite",
-    listFilter,
-    routers: getRouters("favorite"),
+    ...getInitialResponse({
+      title: "Favorite",
+      route: "favorite",
+    }),
   });
+});
+
+router.get("/delete/:id", (req, res, next) => {
+  const { id } = req.params;
+  const datas = require("../../db/advance-data.json");
+  deleteService(datas, id);
+  res.redirect("/advance");
 });
 
 module.exports = router;

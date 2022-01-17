@@ -1,7 +1,9 @@
 <%- include('./partials/header.ejs')%>
     <div class="shadow card p-3 mt-5" style="width: 70%;">
         <div class="row">
-            <h3 class="col">Add Data</h3>
+            <h3 class="col">
+                <%= title%> Data
+            </h3>
             <div class="bg-secondary  col-sm-4 p-1" style="width: 100px; border-radius: 10px;">
                 <p class="m-0 text-light center">Import</p>
             </div>
@@ -9,43 +11,47 @@
         <form action="/advance/add" method="post">
             <div class="pt-4">
                 <div class="form-floating">
-                    <textarea class="form-control" style="height: 150px;" name="string"
-                        placeholder="Leave a comment here" id="floatingTextareaString" required></textarea>
-                    <label for="floatingTextareaString">String</label>
+                    <textarea class="form-control" style="height: 150px;" name="string" placeholder=""
+                        id="floatingTextareaString" required><%= data?.string%> </textarea>
+                    <label class="text-muted" for="floatingTextareaString">String</label>
                 </div>
             </div>
             <div class="pt-4">
                 <div class="form-floating">
                     <input type="number" class="form-control" placeholder="Leave a comment here" name="integer"
-                        id="integer" required></input>
-                    <label for="integer">Integer</label>
+                        id="integer" required value="<%= data?.integer%>"></input>
+                    <label class="text-muted" for="integer">Integer</label>
                 </div>
             </div>
             <div class="pt-4">
                 <div class="form-floating">
                     <input type="number" class="form-control" placeholder="Leave a comment here" name="float" id="float"
-                        required></input>
-                    <label for="float">Float</label>
+                        required value="<%= data?.float%>"></input>
+                    <label class="text-muted" for="float">Float</label>
                 </div>
             </div>
             <div class="pt-4 row">
                 <div class="col form">
-                    <label for="date">Start Date</label>
-                    <input class="form-control" type="date" name="start-date" id="date" required>
+                    <label class="text-muted" for="date">Start Date</label>
+                    <input class="form-control" type="date" name="start-date" id="date"
+                        value="<%= data ? data['start-date'] :''%>" required>
                 </div>
                 <div class="col form">
-                    <label for="date">End Date</label>
-                    <input class="form-control" type="date" name="end-date" id="date" required>
+                    <label class="text-muted" for="date">End Date</label>
+                    <input class="form-control" type="date" name="end-date" id="date"
+                        value="<%= data ? data['end-date'] :''%>" required>
                 </div>
             </div>
             <div class="pt-4">
                 <div class="form-floating">
                     <select type="number" class="form-control" placeholder="Leave a comment here" name="boolean"
                         id="boolean" required>
-                        <option value="true">Ya</option>
-                        <option value="false">Tidak</option>
+                        <option value="">Go Choose Below</option>
+                        <option <%=data?.boolean==="true" ? ' selected' :'' %> value="true">Yes, Of Course</option>
+                        <option <%=data?.boolean==="false" ? ' selected' :'' %> value="false">No, Shit such idiot
+                        </option>
                     </select>
-                    <label for="boolean">Publish ?</label>
+                    <label class="text-muted" for="boolean">Publish ?</label>
                 </div>
             </div>
             <div class="pt-4 d-flex" style="justify-content: right;">

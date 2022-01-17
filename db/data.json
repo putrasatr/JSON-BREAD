@@ -1,12 +1,5 @@
 [
    {
-      "string": "misanthroped",
-      "integer": 143212,
-      "float": 4.554,
-      "date": "2018-08-25",
-      "boolean": "true"
-   },
-   {
       "string": "misantrophy",
       "integer": 14325,
       "float": 4.554,
@@ -112,17 +105,17 @@
       "boolean": "true"
    },
    {
-      "string": "Kunto Aji - Konon Katanya",
-      "integer": 3123,
-      "float": 80,
-      "date": "2019-10-29",
-      "boolean": "true"
-   },
-   {
       "string": "Payung Teduh - Sebuah Cerita",
       "integer": 231,
       "float": 2312,
       "date": "1991-09-30",
       "boolean": "true"
+   },
+   {
+      "string": "S",
+      "integer": 123,
+      "float": 123,
+      "date": "2021-12-31",
+      "boolean": "false"
    }
 ]
