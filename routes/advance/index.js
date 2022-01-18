@@ -39,9 +39,9 @@ router.get("/edit/:id", (req, res, next) => {
   });
 });
 
-router.post("/add", (req, res, next) => {
+router.post("/form", (req, res, next) => {
   addService(req.body);
-  res.redirect("add");
+  res.redirect("/advance");
 });
 
 router.get("/favorite", (req, res, next) => {
@@ -57,7 +57,7 @@ router.get("/favorite/:id", (req, res, next) => {
   const { id } = req.params;
   const datas = require("../../db/advance-data.json");
   favoriteService(datas, id);
-  res.redirect("/advance");
+  res.redirect("/advance#favorite-" + id);
 });
 
 router.get("/delete/:id", (req, res, next) => {
