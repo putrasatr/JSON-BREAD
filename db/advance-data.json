@@ -1,5 +1,5 @@
 {
-  "last_id": 13,
+  "last_id": 15,
   "data": [
     {
       "string": " Ther",
@@ -70,7 +70,7 @@
       "float": "123",
       "start-date": "2022-01-01",
       "end-date": "2022-01-02",
-      "boolean": "false",
+      "boolean": "true",
       "id": 18
     },
     {
@@ -81,6 +81,24 @@
       "end-date": "2022-01-02",
       "boolean": "false",
       "id": 13
+    },
+    {
+      "string": " ",
+      "integer": "123",
+      "float": "123",
+      "start-date": "2022-01-01",
+      "end-date": "2022-01-02",
+      "boolean": "true",
+      "id": 14
+    },
+    {
+      "string": "Bunga Hti\r\n",
+      "integer": "123",
+      "float": "123",
+      "start-date": "2022-01-01",
+      "end-date": "2022-01-02",
+      "boolean": "false",
+      "id": 15
     }
   ]
 }

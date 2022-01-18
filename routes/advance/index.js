@@ -45,11 +45,18 @@ router.post("/form", (req, res, next) => {
 });
 
 router.get("/favorite", (req, res, next) => {
+  const datas = require("../../db/advance-data.json");
+  const { string } = req.query;
+  let data = datas.data;
+  if (string) data = getFilteredData(datas.data, string);
+  data = data.filter((item) => JSON.parse(item.boolean));
   res.render("advance/favorite", {
     ...getInitialResponse({
       title: "Favorite",
       route: "favorite",
     }),
+    query: req.query,
+    data,
   });
 });
 
