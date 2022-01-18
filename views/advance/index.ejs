@@ -27,9 +27,14 @@
                                     </div>
                                 </div>
                                 <div class="card-body">
-                                    <small class="text-muted">
-                                        Clicked Count: <%= item.float%>
-                                    </small>
+                                    <div class="row d-flex mb-2" style="justify-content: space-between;">
+                                        <small class="text-muted col">
+                                            Clicked Count: <%= item.float%>
+                                        </small>
+                                        <button class="btn favorite" id="<%=item.id%>" style="width: 50px;">
+                                            ❤️ <%=item.boolean==="true" ? "Ya" : "Tidak" %>
+                                        </button>
+                                    </div>
                                     <a href="advance/edit/<%=item.id%>">
                                         <button class="btn btn-warning text-light" style="width: 100%;">
                                             Edit
@@ -37,7 +42,7 @@
                                     </a>
                                     <div class="d-flex" style="justify-content: right;">
                                         <small class="text-muted">
-                                            <%= item["start-date"] + "/" +item["end-date"]%>
+                                            <%= item["start-date"] + " / " +item["end-date"]%>
                                         </small>
                                     </div>
                                 </div>

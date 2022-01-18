@@ -1,14 +1,4 @@
 {
-  "last_id": 7,
-  "data": [
-    {
-      "string": " DAta`",
-      "integer": "123",
-      "float": "123",
-      "start-date": "2022-01-21",
-      "end-date": "2022-01-20",
-      "boolean": "true",
-      "id": 7
-    }
-  ]
+  "last_id": 9,
+  "data": []
 }

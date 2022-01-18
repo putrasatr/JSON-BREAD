@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const { addService, deleteService } = require("./service");
+const { addService, deleteService, favoriteService } = require("./service");
 const { getFilteredData, getInitialResponse } = require("../../helpers");
 
 router.get("/", (req, res, next) => {
@@ -51,6 +51,13 @@ router.get("/favorite", (req, res, next) => {
       route: "favorite",
     }),
   });
+});
+
+router.get("/favorite/:id", (req, res, next) => {
+  const { id } = req.params;
+  const datas = require("../../db/advance-data.json");
+  favoriteService(datas, id);
+  res.redirect("/advance");
 });
 
 router.get("/delete/:id", (req, res, next) => {
